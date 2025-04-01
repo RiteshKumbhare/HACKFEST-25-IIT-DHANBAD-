@@ -1,1 +1,41 @@
+# Description:
+This repository contains a hybrid sentiment analysis model that combines traditional machine learning (Logistic Regression) and deep learning (DistilBERT Transformer model) to classify user reviews into three sentiment categories:
+Negative (0)
+Neutral (1)
+Positive (2)
+The model is trained on the Yelp Review Full dataset and is designed to provide accurate sentiment classification using both TF-IDF-based Logistic Regression and a fine-tuned Transformer model.
 
+# Key Features:
+✅ Dataset Preparation:
+1.Uses Yelp Review Full dataset from Hugging Face.
+2.Balances the dataset by sampling an equal number of negative, neutral, and positive reviews.
+3.Applies text cleaning & stopword removal to enhance data quality.
+
+✅ Traditional Machine Learning Model (Logistic Regression):
+1.Uses TF-IDF vectorization (unigrams & bigrams) to extract features.
+2.Implements a Logistic Regression classifier with balanced class weights.
+3.Evaluates model performance using classification reports & F1 scores.
+
+✅ Deep Learning Model (DistilBERT Transformer):
+1.Uses DistilBERT (distilbert-base-uncased) from Hugging Face.
+2.Fine-tunes the model on labeled Yelp reviews.
+3.Uses Hugging Face Trainer API for training and evaluation.
+
+✅ Hybrid Sentiment Analyzer:
+1.Combines both models for robust sentiment classification.
+2.Outputs predictions from both Logistic Regression and Transformer models.
+3.Provides confidence scores for Transformer-based predictions.
+
+# INSTALLATION AND USAGE:
+1. CLONE THE REPOSITORY:
+git clone https://github.com/RiteshKumbhare/sentiment-analysis-ml.git
+cd sentiment-analysis-ml
+
+2. INSTALL DEPENDENCIES:
+pip install -r requirements.txt
+
+3.RUN THE SENTIMENT ANALYSIS:
+from sentiment_analyzer import SentimentAnalyzer
+analyzer = SentimentAnalyzer()
+result = analyzer.analyze("The product is amazing and exceeded expectations!")
+print(result)
